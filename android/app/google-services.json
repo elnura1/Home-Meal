@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "707420347938",
+    "project_id": "home-meal-h6v2at",
+    "storage_bucket": "home-meal-h6v2at.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707420347938:android:1fcd977aafcddfb4cdf47b",
+        "android_client_info": {
+          "package_name": "com.mycompany.homemeal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZV9_pqB7_XuTS6MOKH7haRNBF20MyjpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
