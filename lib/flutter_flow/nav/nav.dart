@@ -118,11 +118,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const UserSettingWidget(),
         ),
         FFRoute(
-          name: 'Setting',
-          path: '/setting',
-          builder: (context, params) => const SettingWidget(),
-        ),
-        FFRoute(
           name: 'notification',
           path: '/Notification',
           builder: (context, params) => const NotificationWidget(),
@@ -151,6 +146,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'profilebuissnes',
           path: '/profilebuissnes',
           builder: (context, params) => const ProfilebuissnesWidget(),
+        ),
+        FFRoute(
+          name: 'profileseting',
+          path: '/profileseting',
+          builder: (context, params) => const ProfilesetingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

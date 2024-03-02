@@ -7,7 +7,6 @@ export '/auth_food_forget/auth_food_forget_widget.dart'
     show AuthFoodForgetWidget;
 export '/profile/add_members/add_members_widget.dart' show AddMembersWidget;
 export '/profile/user_setting/user_setting_widget.dart' show UserSettingWidget;
-export '/profile/setting/setting_widget.dart' show SettingWidget;
 export '/profile/notification/notification_widget.dart' show NotificationWidget;
 export '/profileuser/profileuser_widget.dart' show ProfileuserWidget;
 export '/profile/language/language_widget.dart' show LanguageWidget;
@@ -17,3 +16,4 @@ export '/profile/proffilanotheruaer/proffilanotheruaer_widget.dart'
     show ProffilanotheruaerWidget;
 export '/profilebuissnes/profilebuissnes_widget.dart'
     show ProfilebuissnesWidget;
+export '/profileseting/profileseting_widget.dart' show ProfilesetingWidget;
