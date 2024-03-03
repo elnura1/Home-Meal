@@ -4,19 +4,18 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'onboarding01_model.dart';
-export 'onboarding01_model.dart';
+import 'main_model.dart';
+export 'main_model.dart';
 
-class Onboarding01Widget extends StatefulWidget {
-  const Onboarding01Widget({super.key});
+class MainWidget extends StatefulWidget {
+  const MainWidget({super.key});
 
   @override
-  State<Onboarding01Widget> createState() => _Onboarding01WidgetState();
+  State<MainWidget> createState() => _MainWidgetState();
 }
 
-class _Onboarding01WidgetState extends State<Onboarding01Widget>
-    with TickerProviderStateMixin {
-  late Onboarding01Model _model;
+class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
+  late MainModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -126,10 +125,11 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Onboarding01Model());
+    _model = createModel(context, () => MainModel());
 
-    logFirebaseEvent('screen_view',
-        parameters: {'screen_name': 'Onboarding01'});
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Main'});
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -147,7 +147,7 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -156,27 +156,30 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
               child: Container(
                 width: double.infinity,
                 height: 500.0,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color(0xFF4B39EF),
-                      Color(0xFFFF5963),
-                      Color(0xFFEE8B60)
+                      FlutterFlowTheme.of(context).tertiary,
+                      const Color(0xFF410E0B),
+                      FlutterFlowTheme.of(context).tertiary
                     ],
-                    stops: [0.0, 0.5, 1.0],
-                    begin: AlignmentDirectional(-1.0, -1.0),
-                    end: AlignmentDirectional(1.0, 1.0),
+                    stops: const [0.0, 0.5, 1.0],
+                    begin: const AlignmentDirectional(-1.0, -1.0),
+                    end: const AlignmentDirectional(1.0, 1.0),
                   ),
                 ),
                 child: Container(
                   width: 100.0,
                   height: 100.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Color(0x00FFFFFF), Colors.white],
-                      stops: [0.0, 1.0],
-                      begin: AlignmentDirectional(0.0, -1.0),
-                      end: AlignmentDirectional(0, 1.0),
+                      colors: [
+                        const Color(0x00FFFFFF),
+                        FlutterFlowTheme.of(context).secondaryBackground
+                      ],
+                      stops: const [0.0, 1.0],
+                      begin: const AlignmentDirectional(0.0, -1.0),
+                      end: const AlignmentDirectional(0, 1.0),
                     ),
                   ),
                   child: Column(
@@ -186,25 +189,17 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                       Container(
                         width: 120.0,
                         height: 120.0,
-                        decoration: const BoxDecoration(
-                          color: Color(0xCCFFFFFF),
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).accent4,
                           shape: BoxShape.circle,
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: ClipRRect(
-                            borderRadius: const BorderRadius.only(
-                              bottomLeft: Radius.circular(50.0),
-                              bottomRight: Radius.circular(50.0),
-                              topLeft: Radius.circular(50.0),
-                              topRight: Radius.circular(50.0),
-                            ),
-                            child: Image.network(
-                              'https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw4fHxmb29kJTIwJTIwaWNvbnxlbnwwfHx8fDE3MDkxMTU2NzV8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                              width: 100.0,
-                              height: 100.0,
-                              fit: BoxFit.fitHeight,
-                            ),
+                          child: Image.network(
+                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/home-meal-h6v2at/assets/asd34zak5y2i/IMG_5511.PNG',
+                            width: 100.0,
+                            height: 52.0,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ).animateOnPageLoad(
@@ -214,14 +209,7 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                             const EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
                         child: Text(
                           'Welcome!',
-                          style: FlutterFlowTheme.of(context)
-                              .displaySmall
-                              .override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                color: const Color(0xFF101213),
-                                fontSize: 36.0,
-                                fontWeight: FontWeight.w600,
-                              ),
+                          style: FlutterFlowTheme.of(context).displaySmall,
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation1']!),
                       ),
@@ -231,13 +219,7 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                         child: Text(
                           'Thanks for joining! Access or create your account below, and get started on your journey!',
                           textAlign: TextAlign.center,
-                          style:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF57636C),
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                          style: FlutterFlowTheme.of(context).labelMedium,
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation2']!),
                       ),
@@ -259,10 +241,14 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 16.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            logFirebaseEvent(
+                                'MAIN_PAGE_GET_STARTED_BTN_ON_TAP');
+                            logFirebaseEvent('Button_navigate_to');
+
+                            context.pushNamed('Main2');
                           },
-                          text: 'Sign up as  a chef',
+                          text: 'Get Started',
                           options: FFButtonOptions(
                             width: 230.0,
                             height: 52.0,
@@ -270,18 +256,12 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                                 0.0, 0.0, 0.0, 0.0),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle:
-                                FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Plus Jakarta Sans',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            textStyle: FlutterFlowTheme.of(context).bodyLarge,
                             elevation: 0.0,
                             borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: FlutterFlowTheme.of(context).alternate,
                               width: 2.0,
                             ),
                             borderRadius: BorderRadius.circular(12.0),
@@ -298,13 +278,21 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                             const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            logFirebaseEvent(
-                                'ONBOARDING01_SIGN_UP_AS_USER_BTN_ON_TAP');
+                            logFirebaseEvent('MAIN_PAGE_MY_ACCOUNT_BTN_ON_TAP');
                             logFirebaseEvent('Button_navigate_to');
 
-                            context.pushNamed('Onboarding02');
+                            context.pushNamed(
+                              'AuthFoodLogin',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: const TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
                           },
-                          text: 'Sign up as  user',
+                          text: 'My Account',
                           options: FFButtonOptions(
                             width: 230.0,
                             height: 52.0,
@@ -312,14 +300,12 @@ class _Onboarding01WidgetState extends State<Onboarding01Widget>
                                 0.0, 0.0, 0.0, 0.0),
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: const Color(0xFF4B39EF),
+                            color: const Color(0xFF410E0B),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontFamily: 'Readex Pro',
                                   color: Colors.white,
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.w500,
                                 ),
                             elevation: 3.0,
                             borderSide: const BorderSide(

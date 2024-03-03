@@ -71,26 +71,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? const Onboarding02Widget()
-          : const AuthFoodLoginWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? const HomeWidget() : const AuthFoodLoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? const Onboarding02Widget()
-              : const AuthFoodLoginWidget(),
-        ),
-        FFRoute(
-          name: 'Onboarding02',
-          path: '/onboarding02',
-          builder: (context, params) => const Onboarding02Widget(),
-        ),
-        FFRoute(
-          name: 'Onboarding01',
-          path: '/onboarding01',
-          builder: (context, params) => const Onboarding01Widget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? const HomeWidget() : const AuthFoodLoginWidget(),
         ),
         FFRoute(
           name: 'AuthFoodReg',
@@ -113,24 +101,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AddMembersWidget(),
         ),
         FFRoute(
-          name: 'UserSetting',
-          path: '/userSetting',
-          builder: (context, params) => const UserSettingWidget(),
+          name: 'profile',
+          path: '/profile',
+          builder: (context, params) => const ProfileWidget(),
         ),
         FFRoute(
           name: 'notification',
           path: '/Notification',
           builder: (context, params) => const NotificationWidget(),
-        ),
-        FFRoute(
-          name: 'Profileuser',
-          path: '/profileuser',
-          builder: (context, params) => const ProfileuserWidget(),
-        ),
-        FFRoute(
-          name: 'Language',
-          path: '/language',
-          builder: (context, params) => const LanguageWidget(),
         ),
         FFRoute(
           name: 'ProffileSummary',
@@ -151,6 +129,51 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'profileseting',
           path: '/profileseting',
           builder: (context, params) => const ProfilesetingWidget(),
+        ),
+        FFRoute(
+          name: 'DetailsSocialPost',
+          path: '/detailsSocialPost',
+          builder: (context, params) => const DetailsSocialPostWidget(),
+        ),
+        FFRoute(
+          name: 'Changeprofile',
+          path: '/changeprofile',
+          builder: (context, params) => const ChangeprofileWidget(),
+        ),
+        FFRoute(
+          name: 'photo',
+          path: '/photo',
+          builder: (context, params) => const PhotoWidget(),
+        ),
+        FFRoute(
+          name: 'Home',
+          path: '/home',
+          builder: (context, params) => const HomeWidget(),
+        ),
+        FFRoute(
+          name: 'CreateProduct',
+          path: '/createProduct',
+          builder: (context, params) => const CreateProductWidget(),
+        ),
+        FFRoute(
+          name: 'buyproduct',
+          path: '/buyproduct',
+          builder: (context, params) => const BuyproductWidget(),
+        ),
+        FFRoute(
+          name: 'Success',
+          path: '/success',
+          builder: (context, params) => const SuccessWidget(),
+        ),
+        FFRoute(
+          name: 'Main',
+          path: '/main',
+          builder: (context, params) => const MainWidget(),
+        ),
+        FFRoute(
+          name: 'Main2',
+          path: '/main2',
+          builder: (context, params) => const Main2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

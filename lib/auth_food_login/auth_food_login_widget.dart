@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'auth_food_login_model.dart';
 export 'auth_food_login_model.dart';
 
@@ -90,6 +88,8 @@ class _AuthFoodLoginWidgetState extends State<AuthFoodLoginWidget>
 
     _model.passwordCreateConfirmController ??= TextEditingController();
     _model.passwordCreateConfirmFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -273,7 +273,7 @@ class _AuthFoodLoginWidgetState extends State<AuthFoodLoginWidget>
                                             Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      0.0, 0.0, 0.0, 20.0),
+                                                      0.0, 0.0, 0.0, 10.0),
                                               child: SizedBox(
                                                 width: double.infinity,
                                                 child: TextFormField(
@@ -458,34 +458,15 @@ class _AuthFoodLoginWidgetState extends State<AuthFoodLoginWidget>
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 0.0, 0.0, 39.0),
+                                                        0.0, 90.0, 0.0, 39.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
                                                     logFirebaseEvent(
                                                         'AUTH_FOOD_LOGIN_PAGE_ВОЙТИ_BTN_ON_TAP');
                                                     logFirebaseEvent(
-                                                        'Button_auth');
-                                                    GoRouter.of(context)
-                                                        .prepareAuthEvent();
+                                                        'Button_navigate_to');
 
-                                                    final user =
-                                                        await authManager
-                                                            .signInWithEmail(
-                                                      context,
-                                                      _model
-                                                          .emailCreateController
-                                                          .text,
-                                                      _model
-                                                          .passwordCreateConfirmController
-                                                          .text,
-                                                    );
-                                                    if (user == null) {
-                                                      return;
-                                                    }
-
-                                                    context.goNamedAuth(
-                                                        'Onboarding02',
-                                                        context.mounted);
+                                                    context.pushNamed('Main2');
                                                   },
                                                   text: 'Войти',
                                                   options: FFButtonOptions(
@@ -520,16 +501,16 @@ class _AuthFoodLoginWidgetState extends State<AuthFoodLoginWidget>
                                                 ),
                                               ),
                                             ),
-                                            Column(
+                                            const Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 16.0),
                                                     child: Wrap(
@@ -548,189 +529,7 @@ class _AuthFoodLoginWidgetState extends State<AuthFoodLoginWidget>
                                                           VerticalDirection
                                                               .down,
                                                       clipBehavior: Clip.none,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      16.0),
-                                                          child: FFButtonWidget(
-                                                            onPressed:
-                                                                () async {
-                                                              logFirebaseEvent(
-                                                                  'AUTH_FOOD_LOGIN_CONTINUE_WITH_GOOGLE_BTN');
-                                                              logFirebaseEvent(
-                                                                  'Button_auth');
-                                                              GoRouter.of(
-                                                                      context)
-                                                                  .prepareAuthEvent();
-                                                              final user =
-                                                                  await authManager
-                                                                      .signInWithGoogle(
-                                                                          context);
-                                                              if (user ==
-                                                                  null) {
-                                                                return;
-                                                              }
-                                                              logFirebaseEvent(
-                                                                  'Button_navigate_to');
-
-                                                              context.pushNamedAuth(
-                                                                  'ProffileSummary',
-                                                                  context
-                                                                      .mounted);
-                                                            },
-                                                            text:
-                                                                'Continue with Google',
-                                                            icon: const FaIcon(
-                                                              FontAwesomeIcons
-                                                                  .google,
-                                                              size: 20.0,
-                                                            ),
-                                                            options:
-                                                                FFButtonOptions(
-                                                              width: 230.0,
-                                                              height: 44.0,
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              iconPadding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryBackground,
-                                                              textStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                      ),
-                                                              elevation: 0.0,
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate,
-                                                                width: 2.0,
-                                                              ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
-                                                              hoverColor:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        isAndroid
-                                                            ? Container()
-                                                            : Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            16.0),
-                                                                child:
-                                                                    FFButtonWidget(
-                                                                  onPressed:
-                                                                      () async {
-                                                                    logFirebaseEvent(
-                                                                        'AUTH_FOOD_LOGIN_CONTINUE_WITH_APPLE_BTN_');
-                                                                    logFirebaseEvent(
-                                                                        'Button_auth');
-                                                                    GoRouter.of(
-                                                                            context)
-                                                                        .prepareAuthEvent();
-                                                                    final user =
-                                                                        await authManager
-                                                                            .signInWithApple(context);
-                                                                    if (user ==
-                                                                        null) {
-                                                                      return;
-                                                                    }
-
-                                                                    context.goNamedAuth(
-                                                                        'Onboarding02',
-                                                                        context
-                                                                            .mounted);
-                                                                  },
-                                                                  text:
-                                                                      'Continue with Apple',
-                                                                  icon: const FaIcon(
-                                                                    FontAwesomeIcons
-                                                                        .apple,
-                                                                    size: 20.0,
-                                                                  ),
-                                                                  options:
-                                                                      FFButtonOptions(
-                                                                    width:
-                                                                        230.0,
-                                                                    height:
-                                                                        44.0,
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    iconPadding:
-                                                                        const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
-                                                                    textStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Readex Pro',
-                                                                          fontWeight:
-                                                                              FontWeight.bold,
-                                                                        ),
-                                                                    elevation:
-                                                                        0.0,
-                                                                    borderSide:
-                                                                        BorderSide(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .alternate,
-                                                                      width:
-                                                                          2.0,
-                                                                    ),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            12.0),
-                                                                    hoverColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                      ],
+                                                      children: [],
                                                     ),
                                                   ),
                                                 ),

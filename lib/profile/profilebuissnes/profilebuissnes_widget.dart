@@ -61,6 +61,8 @@ class _ProfilebuissnesWidgetState extends State<ProfilebuissnesWidget>
           !anim.applyInitialState),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -88,7 +90,7 @@ class _ProfilebuissnesWidgetState extends State<ProfilebuissnesWidget>
               Align(
                 alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Image.network(
-                  '',
+                  'https://th.bing.com/th/id/R.9eb52ac7405cb9e7251ccdfe4e4f3773?rik=nv%2fDljg67%2fviKA&pid=ImgRaw&r=0',
                   width: double.infinity,
                   height: 340.0,
                   fit: BoxFit.cover,
@@ -225,7 +227,7 @@ class _ProfilebuissnesWidgetState extends State<ProfilebuissnesWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'ALi',
+                                              'Ali',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall,
@@ -284,8 +286,14 @@ class _ProfilebuissnesWidgetState extends State<ProfilebuissnesWidget>
                                               ),
                                             ),
                                             FFButtonWidget(
-                                              onPressed: () {
-                                                print('follow pressed ...');
+                                              onPressed: () async {
+                                                logFirebaseEvent(
+                                                    'PROFILEBUISSNES_PAGE_follow_ON_TAP');
+                                                logFirebaseEvent(
+                                                    'follow_navigate_to');
+
+                                                context
+                                                    .pushNamed('CreateProduct');
                                               },
                                               text: 'Post',
                                               options: FFButtonOptions(

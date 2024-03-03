@@ -108,6 +108,8 @@ class _ProffileSummaryWidgetState extends State<ProffileSummaryWidget>
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'ProffileSummary'});
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

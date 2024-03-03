@@ -24,6 +24,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
 
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'notification'});
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -61,8 +62,10 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                 color: FlutterFlowTheme.of(context).secondaryText,
                 size: 24.0,
               ),
-              onPressed: () {
-                print('IconButton pressed ...');
+              onPressed: () async {
+                logFirebaseEvent('NOTIFICATION_arrow_back_rounded_ICN_ON_T');
+                logFirebaseEvent('IconButton_navigate_back');
+                context.safePop();
               },
             ),
           ),
@@ -477,7 +480,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.network(
-                                    '',
+                                    'https://th.bing.com/th/id/R.9eb52ac7405cb9e7251ccdfe4e4f3773?rik=nv%2fDljg67%2fviKA&pid=ImgRaw&r=0',
                                     width: 300.0,
                                     height: 200.0,
                                     fit: BoxFit.cover,

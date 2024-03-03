@@ -62,6 +62,8 @@ class _ProffilanotheruaerWidgetState extends State<ProffilanotheruaerWidget>
           !anim.applyInitialState),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -89,7 +91,7 @@ class _ProffilanotheruaerWidgetState extends State<ProffilanotheruaerWidget>
               Align(
                 alignment: const AlignmentDirectional(0.0, -1.0),
                 child: Image.network(
-                  'https://i.ytimg.com/vi/1nUH8Jutbdc/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgXyhWMA8=&rs=AOn4CLAA7v6-mhmoq9gDAK_kX2txyWQYwg',
+                  'https://th.bing.com/th/id/OIP.VgCfTEdrXFJfY-Pnos_ZxAAAAA?w=474&h=316&rs=1&pid=ImgDetMain',
                   width: double.infinity,
                   height: 340.0,
                   fit: BoxFit.cover,
@@ -388,81 +390,103 @@ class _ProffilanotheruaerWidgetState extends State<ProffilanotheruaerWidget>
                                                                     12.0,
                                                                     16.0,
                                                                     8.0),
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Expanded(
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  Text(
-                                                                    'April 25, 9:00am',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Readex Pro',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                        ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            4.0,
-                                                                            0.0,
-                                                                            8.0),
-                                                                    child: Text(
-                                                                      'lorem',
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            logFirebaseEvent(
+                                                                'PROFFILANOTHERUAER_PAGE_Food_ON_TAP');
+                                                            logFirebaseEvent(
+                                                                'Food_navigate_to');
+
+                                                            context.pushNamed(
+                                                                'DetailsSocialPost');
+                                                          },
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Expanded(
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Text(
+                                                                      'April 25, 9:00am',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .headlineSmall,
+                                                                          .bodySmall
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                          ),
                                                                     ),
-                                                                  ),
-                                                                  Text(
-                                                                    'With Kaylene Huchtins',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium,
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          8.0,
-                                                                          8.0,
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
                                                                           0.0,
                                                                           8.0),
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            12.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  'https://th.bing.com/th?id=OIF.dYZAW0%2f3cEnG%2fQFO4x%2fSaA&rs=1&pid=ImgDetMain',
-                                                                  width: 100.0,
-                                                                  height: 100.0,
-                                                                  fit: BoxFit
-                                                                      .cover,
+                                                                      child:
+                                                                          Text(
+                                                                        'lorem',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .headlineSmall,
+                                                                      ),
+                                                                    ),
+                                                                    Text(
+                                                                      'With Kaylene Huchtins',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium,
+                                                                    ),
+                                                                  ],
                                                                 ),
                                                               ),
-                                                            ),
-                                                          ],
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            8.0,
+                                                                            8.0,
+                                                                            0.0,
+                                                                            8.0),
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              12.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    'https://th.bing.com/th?id=OIF.dYZAW0%2f3cEnG%2fQFO4x%2fSaA&rs=1&pid=ImgDetMain',
+                                                                    width:
+                                                                        100.0,
+                                                                    height:
+                                                                        100.0,
+                                                                    fit: BoxFit
+                                                                        .cover,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                       Padding(

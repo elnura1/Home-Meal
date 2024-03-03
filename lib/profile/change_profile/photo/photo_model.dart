@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'profileuser_widget.dart' show ProfileuserWidget;
+import 'photo_widget.dart' show PhotoWidget;
 import 'package:flutter/material.dart';
 
-class ProfileuserModel extends FlutterFlowModel<ProfileuserWidget> {
+class PhotoModel extends FlutterFlowModel<PhotoWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
